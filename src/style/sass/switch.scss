@@ -4,4 +4,50 @@
     align-items: center;
     justify-content: space-between;
     background-color: yellow;
+
+    .switch {
+        background-color: red;
+        width: 50%;
+
+        .switch-labels{
+            width: 90%;
+            margin: auto;
+            label {
+                cursor: pointer;
+                font-weight: bolder;
+
+                &:hover {
+                    transform: scale(1.5) translateY(-5px);
+                }
+            }
+        }
+
+        .switchers {
+            background-color: blue;
+            padding: 5px 0;
+            border-radius: 15px;
+            .circle {
+                width: 15px;
+                height: 15px;
+                border-radius: 50%;
+                background-color: aqua;
+            }
+            
+            input {
+                display: none;
+                // visibility: hidden;
+
+                &:checked + .circle{
+                    display: block;
+                }
+            }
+        }
+
+
+        .switch-labels, .switchers {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+    }
 }

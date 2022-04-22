@@ -11,9 +11,18 @@ const Switch = (props) => {
                     <label htmlFor="theme3">3</label>
                 </div>
                 <div className="switchers">
-                    <input type="radio" name="theme" id="theme1" />
-                    <input type="radio" name="theme" id="theme2" />
-                    <input type="radio" name="theme" id="theme3" />
+                    <div>
+                        <input type="radio" name="theme" id="theme1" defaultChecked={true}/>
+                        <span className="circle"></span>
+                    </div>
+                    <div>
+                        <input type="radio" name="theme" id="theme2" />
+                        <span className="circle"></span>
+                    </div>
+                    <div>
+                        <input type="radio" name="theme" id="theme3" />
+                        <span className="circle"></span>
+                    </div>
                 </div>
             </div>
         </div>
