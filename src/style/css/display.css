@@ -1,0 +1,15 @@
+.display {
+  width: 320px;
+  background-color: rgb(189, 189, 189);
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 10px;
+}
+.display .answer {
+  font-size: 38px;
+  font-weight: bolder;
+}
+
+/*# sourceMappingURL=display.css.map */

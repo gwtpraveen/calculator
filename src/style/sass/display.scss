@@ -1,0 +1,14 @@
+.display {
+    width: 320px;
+    background-color: rgb(189, 189, 189);
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 10px;
+
+    .answer {
+        font-size: 38px;
+        font-weight: bolder;
+    }
+}

@@ -1,0 +1,21 @@
+.keypad {
+  width: 320px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0 5px;
+  background-color: gray;
+}
+.keypad .bottomLine {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+.keypad .bottomLine > :first-child {
+  flex-basis: 100%;
+}
+.keypad .bottomLine > :nth-child(2) {
+  flex-basis: 100%;
+}
+
+/*# sourceMappingURL=other.css.map */

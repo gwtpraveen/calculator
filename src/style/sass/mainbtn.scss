@@ -1,0 +1,20 @@
+@import "global";
+
+.button-border {
+    width: 70px;
+    height: 50px;
+    background-color: $color-btn-border;
+    border-radius: 8px;
+    overflow: hidden;
+
+    .btn {
+        width: 100%;
+        height: 92%;
+        border: none;
+        border-radius: 5px;
+        background-color: $color-btn-background;
+        color: $color-btn;
+        font-size: 25px;
+        font-weight: bolder;
+    }
+}
