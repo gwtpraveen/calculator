@@ -7,7 +7,7 @@
     .themelabel {
         font-size: 12px;
         font-weight: bolder;
-        padding-bottom: 2px;
+        padding: 0 0 2px 20px;
     }
 
     .switch {
@@ -15,9 +15,19 @@
         margin-left: 10px;
         flex-basis: 60%;
 
+        &:hover .switchers {
+            opacity: .5;
+        }
+
+        &:hover .switch-labels {
+            opacity: 1;
+        }
+
         .switch-labels{
+            opacity: .6;
             width: 70%;
             margin: auto;
+            transition: 200ms ease;
             label {
                 cursor: pointer;
                 font-weight: bolder;
@@ -33,7 +43,7 @@
             width: 80%;
             margin: auto;
             background-color: blue;
-            padding: 2px;
+            padding: 3px;
             border-radius: 15px;
             .circle {
                 width: 15px;
@@ -41,6 +51,14 @@
                 border-radius: 50%;
                 background-color: aqua;
             }
+
+            &:hover {
+                opacity: .5;
+            }
+            &:hover {
+                opacity: .5;
+            }
+    
             
             input {
                 display: none;

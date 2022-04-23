@@ -3,7 +3,7 @@
 .button-border {
     width: 70px;
     height: 50px;
-    background-color: $color-btn-border;
+    background-color: $color-keypad-btn-border;
     border-radius: 8px;
     overflow: hidden;
 
@@ -12,8 +12,8 @@
         height: 92%;
         border: none;
         border-radius: 5px;
-        background-color: $color-btn-background;
-        color: $color-btn;
+        background-color: $color-keypad-btn-background;
+        color: $color-keypad-btn;
         font-size: 25px;
         font-weight: bolder;
     }

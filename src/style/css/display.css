@@ -1,11 +1,13 @@
 .display {
-  width: 320px;
+  width: 340px;
   background-color: rgb(189, 189, 189);
   height: 70px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   padding: 0 10px;
+  border-radius: 14px;
+  margin: 0 0 20px;
 }
 .display .answer {
   font-size: 38px;

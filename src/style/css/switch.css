@@ -7,16 +7,24 @@
 .switch-container .themelabel {
   font-size: 12px;
   font-weight: bolder;
-  padding-bottom: 2px;
+  padding: 0 0 2px 20px;
 }
 .switch-container .switch {
   width: 50%;
   margin-left: 10px;
   flex-basis: 60%;
 }
+.switch-container .switch:hover .switchers {
+  opacity: 0.5;
+}
+.switch-container .switch:hover .switch-labels {
+  opacity: 1;
+}
 .switch-container .switch .switch-labels {
+  opacity: 0.6;
   width: 70%;
   margin: auto;
+  transition: 200ms ease;
 }
 .switch-container .switch .switch-labels label {
   cursor: pointer;
@@ -30,7 +38,7 @@
   width: 80%;
   margin: auto;
   background-color: blue;
-  padding: 2px;
+  padding: 3px;
   border-radius: 15px;
 }
 .switch-container .switch .switchers .circle {
@@ -38,6 +46,12 @@
   height: 15px;
   border-radius: 50%;
   background-color: aqua;
+}
+.switch-container .switch .switchers:hover {
+  opacity: 0.5;
+}
+.switch-container .switch .switchers:hover {
+  opacity: 0.5;
 }
 .switch-container .switch .switchers input {
   display: none;
