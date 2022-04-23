@@ -1,20 +1,27 @@
 .switch-container {
-    width: 50%;
+    width: 140px;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
-    background-color: yellow;
+
+    .themelabel {
+        font-size: 12px;
+        font-weight: bolder;
+        padding-bottom: 2px;
+    }
 
     .switch {
-        background-color: red;
         width: 50%;
+        margin-left: 10px;
+        flex-basis: 60%;
 
         .switch-labels{
-            width: 90%;
+            width: 70%;
             margin: auto;
             label {
                 cursor: pointer;
                 font-weight: bolder;
+                transition: 300ms ease;
 
                 &:hover {
                     transform: scale(1.5) translateY(-5px);
@@ -23,8 +30,10 @@
         }
 
         .switchers {
+            width: 80%;
+            margin: auto;
             background-color: blue;
-            padding: 5px 0;
+            padding: 2px;
             border-radius: 15px;
             .circle {
                 width: 15px;
@@ -46,7 +55,7 @@
 
         .switch-labels, .switchers {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
         }
     }

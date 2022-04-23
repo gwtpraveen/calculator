@@ -3,7 +3,7 @@ import "../style/css/switch.css";
 const Switch = (props) => {
     return ( 
         <div className="switch-container">
-            <p>THEME</p>
+            <p className="themelabel">THEME</p>
             <div className="switch">
                 <div className="switch-labels">
                     <label htmlFor="theme1">1</label>
