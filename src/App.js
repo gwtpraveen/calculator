@@ -5,25 +5,44 @@ import KeyPad from './components/keypad';
 import Switch from './components/switch';
 
 function App() {
-  const [number1, setNumber1] = useState(null);
-  const [number2, setNumber2] = useState(null);
+  const [output, setOutput] = useState(0)
   const [display, setDisplay] = useState(0);
 
   const handleInput = (key) => {
-    if (["+", "-", "/" , "x", "=", "RESET"].includes(key)) {
+    setDisplay(preVal => {
+      let numb = Number(preVal);
 
-
-    } else {
-      setDisplay(preVal => {
-        let numb = String(preVal);
-        if (key === "DEL") {
-          numb = numb.slice(0, -1)
+      if (["+", "-", "/" , "x", "=", "RESET"].includes(key)) {
+        if (["RESET", "="].includes(key)) {
+          if (key === "=") {
+            // TODO equal key
+          } else {
+            // TODO reset btn 
+          }
         } else {
-          numb += key;
+          if (key === "+") {
+            // TODO additoin 
+          } else if (key === "-") {
+            // TODO subtraction 
+          } else if (key === "/") {
+            // TODO divide
+          } else if (key === "x") {
+            // TODO multiplication 
+          }
         }
-        return (Number(numb))
-      });
-    }
+  
+      } else {
+        // display user input 
+        numb = String(numb)
+          if (key === "DEL") {
+            numb = numb.slice(0, -1)
+          } else {
+            numb += key;
+          }
+      }
+
+      return (Number(numb));
+    });
   };
   
   return (
