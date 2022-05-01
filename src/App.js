@@ -4,54 +4,80 @@ import Display from './components/display';
 import KeyPad from './components/keypad';
 import Switch from './components/switch';
 
-let output = 0;
 function App() {
   const [display, setDisplay] = useState(0);
-  const [lastOperator, setLastOperator] = useState("")
-  // const [output, setOutput] = useState(0)
+  const [lastOperator, setLastOperator] = useState(null);
+  const [equal, setEqual] = useState(false);
+  const [number1, setNumber1] =  useState(0);
+  const [number2, setNumber2] = useState(0);
+
+  useEffect(() => {
+    if (lastOperator === "+") setNumber2(preVal => preVal + number1);
+    else if (lastOperator === "-") {
+      setNumber2(preVal => {
+        if (preVal === 0) {
+          return number1;
+        } else {
+          return preVal - number1;
+        }
+      });
+    }
+    else if (lastOperator === "/") {
+      setNumber2(preVal => {
+        if (preVal === 0) {
+          return number1;
+        } else if (number1 !== 0) {
+          return preVal / number1;
+        }
+      });
+    }
+    else if (lastOperator === "x") {
+      setNumber2(preVal => {
+        if (preVal === 0) {
+          return number1;
+        } else {
+          return preVal * number1;
+        }
+      });
+    }
+
+  }, [number1, lastOperator]);
+
+  useEffect(() => {
+    if (equal) {
+      setDisplay(number2);
+    }
+  }, [equal, number2])
 
 
   const handleInput = (key) => {
     if (["+", "-", "/" , "x", "=", "RESET"].includes(key)) {
       // todo operators
       if (key === "+") {
-        output += display;
         setLastOperator("+");
+        setNumber1(display);
         setDisplay(0);
       } else if (key === "-") {
-        output -= display;
-        setLastOperator("-")
-        setDisplay(0)
-      } else if (key === "x") {
-        if (output === 0) {
-          output = display;
-        }
-        output = display * output;
-        setLastOperator("x");
-        console.log(output)
-        setDisplay(0)
-      } else if (key === "/") {
-        output /= display;
+        setLastOperator("-");
+        setNumber1(display);
+        setDisplay(0);
+      } else if (key === "/"){
         setLastOperator("/");
+        setNumber1(display);
+        setDisplay(0);
+      } else if (key === "x") {
+        setLastOperator("x");
+        setNumber1(display);
         setDisplay(0);
       } else if (key === "=") {
-        if (lastOperator === "+") {
-          output += display;
-          setDisplay(output)
-        } else if (lastOperator === "-") {
-          output -= display;
-          setDisplay(output);
-        } else if (lastOperator === "x") {
-          output *= display;
-          setDisplay(output);
-        } else if (lastOperator === "/") {
-          output /= display;
-          setDisplay(output);
-        }
+        setNumber1(display);
+        setEqual(true);
       } else if (key === "RESET") {
-        output = 0;
         setDisplay(0);
-        setLastOperator(null)
+        setLastOperator(null);
+        setNumber1(0);
+        setNumber2(0);
+        setEqual(false);
       }
     } else {
       setDisplay(preVal => {
