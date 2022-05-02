@@ -7,6 +7,7 @@ import Switch from './components/switch';
 function App() {
   const [display, setDisplay] = useState(0);
   const [lastOperator, setLastOperator] = useState(null);
+  const [newOperator, setNewOpeator] = useState(null);
   const [equal, setEqual] = useState(false);
   const [number1, setNumber1] =  useState(0);
   const [number2, setNumber2] = useState(0);
@@ -40,8 +41,10 @@ function App() {
         }
       });
     }
+    setLastOperator(newOperator);
+    setNewOpeator(null);
 
-  }, [number1, lastOperator]);
+  }, [number1, lastOperator, newOperator]);
 
   useEffect(() => {
     if (equal) {
@@ -54,19 +57,23 @@ function App() {
     if (["+", "-", "/" , "x", "=", "RESET"].includes(key)) {
       // todo operators
       if (key === "+") {
-        setLastOperator("+");
+        if (lastOperator === null) setLastOperator("+");
+        setNewOpeator("+");
         setNumber1(display);
         setDisplay(0);
       } else if (key === "-") {
-        setLastOperator("-");
+        if (lastOperator === null) setLastOperator("-");
+        setNewOpeator("-");
         setNumber1(display);
         setDisplay(0);
       } else if (key === "/"){
-        setLastOperator("/");
+        if (lastOperator === null) setLastOperator("/");
+        setNewOpeator("/");
         setNumber1(display);
         setDisplay(0);
       } else if (key === "x") {
-        setLastOperator("x");
+        if (lastOperator === null) setLastOperator("x");
+        setNewOpeator("x");
         setNumber1(display);
         setDisplay(0);
       } else if (key === "=") {

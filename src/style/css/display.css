@@ -1,5 +1,5 @@
 .display {
-  width: 340px;
+  width: 380px;
   background-color: rgb(189, 189, 189);
   height: 70px;
   display: flex;
@@ -12,6 +12,12 @@
 .display .answer {
   font-size: 38px;
   font-weight: bolder;
+}
+
+@media (max-width: 450px) {
+  .display {
+    width: 320px;
+  }
 }
 
 /*# sourceMappingURL=display.css.map */
